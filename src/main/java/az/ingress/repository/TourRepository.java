@@ -12,14 +12,15 @@ import java.util.Set;
 
 @Repository
 public interface TourRepository extends JpaRepository<Tour, Long> {
-    @Query("select t from Tour t " +
-            "join fetch t.destinations d " +
-            "join fetch t.guides g " +
-            "join fetch g.passport p " +
-            "join fetch t.travelers tr"
+
+    @Override
+    @Query("select distinct t from Tour t " +
+            "left join fetch t.destinations d " +
+            "left join fetch t.travelers tr " +
+            "left join fetch t.guides g " +
+            "left join fetch g.passport p"
     )
     List<Tour> findAll();
-
 
     Set<Tour> findByTravelers(Traveler traveler);
 }

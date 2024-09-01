@@ -35,6 +35,12 @@ dependencies {
     implementation "org.springdoc:springdoc-openapi-ui:$openApiVersion"
 }
 
+/*hibernate {
+    enhance {
+        enableLazyInitialization=true
+    }
+}*/
+
 test {
     useJUnitPlatform()
 }

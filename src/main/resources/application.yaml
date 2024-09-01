@@ -16,3 +16,5 @@ spring:
     hibernate:
       logging:
         log_sql_injection: true
+    open-in-view: true
+
