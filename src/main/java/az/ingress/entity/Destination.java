@@ -21,7 +21,7 @@ public class Destination {
     private String description;
     private Date visitDate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinColumn(name = "tour_id")
     private Tour tour;

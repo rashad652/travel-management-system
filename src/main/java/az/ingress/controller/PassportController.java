@@ -8,7 +8,7 @@ import az.ingress.service.PassportService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("v1/api/passports")
+@RequestMapping("v1/passports")
 public class PassportController {
 
     private final PassportService passportService;

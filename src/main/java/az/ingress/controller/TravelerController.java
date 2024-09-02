@@ -12,7 +12,7 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("v1/api/travelers")
+@RequestMapping("v1/travelers")
 public class TravelerController {
 
     private final TravelerService travelerService;

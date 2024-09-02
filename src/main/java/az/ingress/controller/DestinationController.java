@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("v1/api/destinations")
+@RequestMapping("v1/destinations")
 public class DestinationController {
 
 

@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("v1/api/guides")
+@RequestMapping("v1/guides")
 public class GuideController {
 
     private final GuideService guideService;

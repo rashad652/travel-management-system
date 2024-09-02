@@ -11,6 +11,8 @@ import az.ingress.repository.TourRepository;
 import az.ingress.repository.TravelerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,10 +26,12 @@ public class TourService {
     private final TravelerRepository travelerRepository;
     private final GuideRepository guideRepository;
 
+    @CacheEvict(value = "tours", allEntries = true)
     public Tour createTour(Tour tour) {
         return tourRepository.save(tour);
     }
 
+    @Cacheable("tours")
     @SneakyThrows
     public Tour getTourById(Long id) throws Exception {
         return tourRepository.findById(id).orElseThrow(() -> new Exception("Tour not found"));

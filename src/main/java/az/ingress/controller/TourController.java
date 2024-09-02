@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("v1/api/tours")
+@RequestMapping("v1/tours")
 public class TourController {
 
     private final TourService tourService;
