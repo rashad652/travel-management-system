@@ -3,6 +3,7 @@ package az.ingress.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,16 +33,4 @@ public class Guide {
             orphanRemoval = true)
     private Passport passport;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Guide)) return false;
-        Guide guide = (Guide) o;
-        return Objects.equals(id, guide.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }
