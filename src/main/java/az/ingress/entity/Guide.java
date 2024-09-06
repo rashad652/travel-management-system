@@ -26,7 +26,9 @@ public class Guide {
     @ManyToMany(mappedBy = "guides")
     private Set<Tour> tours;
 
-    @OneToOne(mappedBy = "guide", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "guide",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Passport passport;
 
     @Override
